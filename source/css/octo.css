@@ -318,9 +318,15 @@ article blockquote cite:before {
     }
 }
 
-.pullquote-right:before, .pullquote-left:before {
+/*
+ * Pullquotes
+ * ----------
+ */
+
+.pullquote {
     padding: 0;
     border: none;
+    font-style: normal;
     content: attr(data-pullquote);
     float: right;
     width: 45%;
@@ -331,10 +337,32 @@ article blockquote cite:before {
     line-height: 1.45em
 }
 
-.pullquote-left:before {
+.pullquote p {
+    margin: 0;
+}
+
+.pullquote.left {
     float: left;
     margin: .5em 1.5em 1em 0
 }
+
+/*
+ * Youtube videos
+ * --------------
+ */
+
+.flash-video {
+    height: 0;
+    padding-bottom: 56.25%; /*16:9*/
+    position: relative;
+}
+
+.flash-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 
 .force-wrap, article a, aside.sidebar a {
     white-space: -moz-pre-wrap;

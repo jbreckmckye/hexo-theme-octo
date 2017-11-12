@@ -6,8 +6,6 @@ Notes; WIP
 
 CSS is compiled; there's no SASS source.
 
-Supports images with classes 'left', 'right' and 'center'.
-
 - how to make pages work?
 - different social things?
 - disqus
@@ -19,3 +17,13 @@ category cooking, subcategory french cooking).
 
 Social stuff
 - supports twitter sharing only, at present
+
+What works?
+- blockquotes
+- code blocks
+- images (left / right / center)
+- gists
+- headings
+- pullquotes (left, right [= default])
+- jsfiddle embeds
+- youtube videos
