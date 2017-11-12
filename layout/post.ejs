@@ -1,0 +1,23 @@
+<div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title"><%=page.title%></h1>
+            <p class="meta">
+                <time datetime="<%=page.date.toJSON()%>" data-updated="true"><%=new Date(page.date).toDateString()%></time>
+            </p>
+        </header>
+        <div class="entry-content">
+            <%-page.content%>
+        </div>
+        <footer>
+            <p class="meta">
+                <span class="byline author vcard">Posted by <span class="fn"><%= config.author %></span></span>
+                <time datetime="<%=page.date.toJSON()%>" data-updated="true"><%=new Date(page.date).toDateString()%></time>
+                <%-partial('partials/page-tags')%>
+            </p>
+            <%-partial('partials/social')%>
+        </footer>
+    </article>
+</div>
+
+<%-partial('partials/pagination')%>

@@ -1,0 +1,23 @@
+
+# html lang
+language: en
+
+# main menu navigation
+menu:
+  Blog: /
+  About: /about
+  Contact: /contact
+  Archives: /archives
+
+# Social sharing identifiers
+social:
+  twitter: jbreckmckye
+
+# Miscellaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+
+# scripts loaded in the end of the body
+scripts:

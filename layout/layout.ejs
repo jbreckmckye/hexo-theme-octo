@@ -1,0 +1,79 @@
+<%
+var pageTitle = page.title || config.title || '';
+if (is_archive()) pageTitle = 'Archives';
+if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle += ': ' + page.year;
+
+var thisYear = new Date().getFullYear();
+%>
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" lang="<%=config.language%>"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8" lang="<%=config.language%>"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="<%=config.language%>"><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title><%= pageTitle %></title>
+
+    <meta name="author" content="<%= config.author %>">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+    <link rel="canonical" href="<%=config.url + '/' + page.canonical_path.replace('index.html', '')%>">
+
+    <%- js('js/modernizr-2.0') %>
+
+    <%- js('js/jquery-1.9.1') %>
+
+    <%- partial('partials/social-scripts') %>
+
+    <%- js('js/octo') %>
+
+    <%- css('css/octo') %>
+
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    <% if (theme.stylesheets && theme.stylesheets.length) { %>
+        <!-- stylesheets list from config.yml -->
+        <% theme.stylesheets.forEach(function(url) { %>
+            <link rel="stylesheet" href="<%= url %>">
+        <% }); %>
+    <% } %>
+
+</head>
+<body>
+
+<%- partial('partials/header') %>
+
+<%- partial('partials/navigation') %>
+
+<div id="main">
+    <div id="content">
+        <%- body %>
+    </div>
+</div>
+
+<footer role="contentinfo">
+    <p>
+        Copyright © <%= thisYear %> - <%= config.author %> -
+        <span class="credit">Generated using Octo theme for <a href="http://hexo.io">Hexo</a></span>
+    </p>
+</footer>
+
+<% if (theme.scripts && theme.scripts.length) { %>
+    <!-- scripts list from theme config.yml -->
+    <% theme.scripts.forEach(function(url) { %>
+        <script src="<%= url %>"></script>
+    <% }); %>
+<% } %>
+
+</body>
+</html>
