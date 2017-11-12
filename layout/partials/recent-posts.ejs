@@ -1,16 +1,20 @@
-
 <% if (site.posts.length > 0) { %>
-  <div id="recent-posts">
-    <h1>Recent Posts</h1>
+<div class="blog-index">
     <% site.posts.sort('date', -1).limit(10).each(function(post) { %>
-      <div class="recent-post-item">
+  <article>
+    <header>
+      <h1 class="entry-title">
         <a href="<%=config.root + post.path%>"><%=post.title%></a>
-        <% if (post.date) { %>
-          <time datetime="<%=post.date.toJSON()%>">
-            <%=date(post.date)%>
-          </time>
-        <% } %>
-      </div>
+      </h1>
+      <p class="meta">
+        <time datetime="<%=post.date.toJSON()%>" data-updated="true"><%=new Date(post.date).toDateString()%></time>
+      </p>
+    </header>
+    <div class="entry-content"><%-post.excerpt%></div>
+    <footer>
+      <a rel="full-article" href="<%=config.root + post.path%>">Read on →</a>
+    </footer>
+  </article>
     <% }); %>
-  </div>
+</div>
 <% } %>
