@@ -1,0 +1,30 @@
+<aside class="sidebar">
+    <%
+    const tagName = 'featured';
+    const tagged = site.posts.filter(function (post) {
+        var tags = post.tags.data;
+        return tags.find(function(tag) {
+            return tag.name === tagName;
+        });
+    });
+    const showTagged = theme.featured === true && tagged.length > 0;
+    %>
+
+    <% if (showTagged) { %>
+    <section class="odd">
+        <h1>Featured posts</h1>
+        <ul>
+            <% tagged.forEach(function(post) { %>
+            <li class="post">
+                <a href="<%=config.root + post.path%>"><%=post.title%></a>
+            </li>
+            <% }); %>
+        </ul>
+    </section>
+    <% } %>
+
+    <section class="<%= showTagged ? 'even': ''%>">
+        <h1>Recent Posts</h1>
+        <%- list_posts({amount: 10}) %>
+    </section>
+</aside>

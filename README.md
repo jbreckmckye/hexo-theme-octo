@@ -1,8 +1,4 @@
-A Hexo theme based on the classic Octopress 2 skin.
-
-
-Notes; WIP
-----------
+## WIP / Notes:
 
 CSS is compiled; there's no SASS source.
 
@@ -17,6 +13,10 @@ category cooking, subcategory french cooking).
 
 Social stuff
 - supports twitter sharing only, at present
+
+Featured posts
+- turn this on with `featured: true` in config.yaml
+- list is not truncated
 
 What works?
 - blockquotes

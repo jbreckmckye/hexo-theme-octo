@@ -415,9 +415,11 @@ body > header, body > nav, body > footer, body #content > article, body #content
     }
 }
 
+/* Pagination */
+
 body div.pagination {
     margin-left: 18px;
-    margin-right: 18px
+    margin-right: 18px;
 }
 
 @media only screen and (min-width: 480px) {
@@ -440,6 +442,12 @@ body div.pagination {
         margin-right: 55px
     }
 }
+
+.pagination .page-number {
+    display: none;
+}
+
+
 
 body > header {
     font-size: 1em;
@@ -1202,17 +1210,30 @@ article > footer p.meta {
     color: #aaa
 }
 
-#content div.pagination a.prev {
-    position: absolute;
-    left: 0
-}
-
 #content div.pagination a.next {
     position: absolute;
-    right: 0
+    left: 0;
+    color: transparent;
 }
 
-#content div.pagination a:hover {
+#content div.pagination a.next:before {
+    color: #aaaaaa;
+    content: '← Older';
+}
+
+#content div.pagination a.prev {
+    position: absolute;
+    right: 0;
+    color: transparent;
+}
+
+#content div.pagination a.prev:after {
+    color: #aaaaaa;
+    content: 'Newer →';
+}
+
+#content div.pagination a:hover:before,
+#content div.pagination a:hover:after {
     color: #0181eb
 }
 

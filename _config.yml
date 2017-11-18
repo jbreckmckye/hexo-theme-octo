@@ -13,6 +13,9 @@ menu:
 social:
   twitter: jbreckmckye
 
+# Featured post sidebar
+featured: true
+
 # Miscellaneous
 favicon: /favicon.ico
 
