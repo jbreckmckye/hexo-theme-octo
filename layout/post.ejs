@@ -28,7 +28,11 @@
             </p>
         </footer>
     </article>
+
+    <% if (theme.disqus) { %>
+        <%-partial('partials/disqus')%>
+    <% } %>
+
 </div>
 
 <%-partial('partials/sidebar')%>
-

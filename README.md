@@ -91,6 +91,9 @@ sidebars:
   featured: false # boolean to list all posts with tag 'featured'
   github: yourgithubid # list Github repositories | false to disable
 
+# Disqus comments
+disqus: yourpageid # disqus page identifier | false to disable
+
 # Link to atom.xml in nav bar?
 # Use https://github.com/hexojs/hexo-generator-feed to generate these
 atom: true
@@ -108,4 +111,3 @@ This theme will use your `source/images/favicon.png` image as a favicon.
 
 ## Still to do
 - analytics
-- disqus
