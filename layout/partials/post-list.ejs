@@ -1,0 +1,54 @@
+<article role="article">
+    <header>
+        <h1 class="entry-title"><%=listTitle%></h1>
+    </header>
+
+    <div id="blog-archives" class="category">
+        <%
+        const postViews = listPosts.reduce((acc, model)=> {
+            const entry = Object.assign(model, {
+                // only show year if this is first entry in list with that yearstamp
+                displayYear : !acc.find(_ => _.year === model.year),
+                title: model.title || 'Untitled',
+                monthText: model.date.format('MMM'),
+                dayText: model.date.format('DD'),
+                yearText: model.date.format('YYYY'),
+                datetime: date_xml(model.date),
+                target: model.link ? '_blank': '',
+                url: url_for(model.canonical_path)
+            });
+            acc.push(entry);
+            return acc;
+        }, []);
+        %>
+
+        <% postViews.forEach(function(p) { %>
+            <% if (p.displayYear) { %>
+                <h2><%=p.yearText%></h2>
+            <% } %>
+
+            <article>
+                <h1>
+                    <a href="<%=p.url%>" target="<%=p.target%>"><%=p.title%></a>
+                </h1>
+                <time datetime="<%=p.datetime%>">
+                    <span class="month"><%=p.monthText%></span>
+                    <span class="day"><%=p.dayText%></span>
+                    <span class="year"><%=p.year%></span>
+                </time>
+                <footer>
+                    <% if (p.tags && p.tags.length){ %>
+                    <span class="categories">
+                        posted in
+                        <% p.tags.forEach((tag, i) => { %>
+                        <a class="category" href="<%=url_for(tag.path)%>"><%=tag.name%></a><%= i+1 < p.tags.length ? ',' : ''%>
+                        <% }) %>
+                    </span>
+                    <% } %>
+                </footer>
+            </article>
+
+        <% }); %>
+
+    </div>
+</article>
