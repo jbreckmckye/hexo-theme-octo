@@ -1,7 +1,9 @@
 <nav role="navigation">
-    <ul class="subscription" data-subscription="rss">
-        <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-    </ul>
+    <% if (theme.atom) { %>
+        <ul class="subscription" data-subscription="rss">
+            <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+        </ul>
+    <% } %>
 
     <form action="http://google.com/search" method="get">
         <fieldset role="search">

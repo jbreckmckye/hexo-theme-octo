@@ -31,12 +31,13 @@ What works?
 - jsfiddle embeds
 - youtube videos
 
+Atom.xml link
+- if you use `hexo-generator-feed` to create an Atom.xml file, you can link to it in the navigation bar by setting `atom: true`
+
 Favicon
 - this theme will use your source/images/favicon.png image as the tab / shortcut icon
 
 Still to do
+- analytics
 - disqus
 - post pagination
-- archive pages
-- atom.xml
-- non-post pages?

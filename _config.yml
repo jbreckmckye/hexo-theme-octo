@@ -18,6 +18,9 @@ sidebars:
   featured: false
   github: jbreckmckye
 
+# Have atom.xml? (use hexo-generator-feed to create this)
+atom: true
+
 # Miscellaneous
 favicon: /favicon.ico
 
