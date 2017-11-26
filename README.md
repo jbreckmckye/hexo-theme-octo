@@ -2,9 +2,9 @@
 
 ## What is this?
 
-A Hexo-theme based on the 'classic' theme for Octopress 2.
+A Hexo theme based on the 'classic' theme for Octopress 2.
 
-Read the Hexo theme [installation instructions](https://github.com/hexojs/hexo/wiki/Themes#install).
+Read Hexo's theme [installation instructions](https://github.com/hexojs/hexo/wiki/Themes#install).
 
 ## Notes for Octopress users
 
@@ -104,7 +104,7 @@ scripts:
 ```
 
 ## Favicon
-- this theme will use your source/images/favicon.png image as the tab / shortcut icon
+This theme will use your `source/images/favicon.png` image as a favicon.
 
 ## Still to do
 - analytics
