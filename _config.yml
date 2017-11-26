@@ -6,7 +6,6 @@ language: en
 menu:
   Blog: /
   About: /about
-  Contact: /contact
   Archives: /archives
 
 # Social sharing identifiers
