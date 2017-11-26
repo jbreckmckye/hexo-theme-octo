@@ -4,7 +4,7 @@
 
 A Hexo theme based on the 'classic' theme for Octopress 2.
 
-Read Hexo's theme [installation instructions](https://github.com/hexojs/hexo/wiki/Themes#install).
+To install, clone this repository into a Hexo `themes/octo` folder and change `theme` in `_config.yml` to "octo".
 
 ## Notes for Octopress users
 
