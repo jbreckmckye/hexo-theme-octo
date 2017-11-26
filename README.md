@@ -94,6 +94,9 @@ sidebars:
 # Disqus comments
 disqus: yourpageid # disqus page identifier | false to disable
 
+# Analytics
+googleAnalytics: UA-your-id # Google Analytics ID | false to disable
+
 # Link to atom.xml in nav bar?
 # Use https://github.com/hexojs/hexo-generator-feed to generate these
 atom: true
@@ -109,5 +112,3 @@ scripts:
 ## Favicon
 This theme will use your `source/images/favicon.png` image as a favicon.
 
-## Still to do
-- analytics
