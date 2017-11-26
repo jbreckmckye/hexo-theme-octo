@@ -31,6 +31,9 @@ What works?
 - jsfiddle embeds
 - youtube videos
 
+Favicon
+- this theme will use your source/images/favicon.png image as the tab / shortcut icon
+
 Still to do
 - disqus
 - post pagination

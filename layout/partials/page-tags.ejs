@@ -1,7 +1,7 @@
 <% if (page.tags && page.tags.length){ %>
     <span class="categories">
     <% page.tags.forEach((tag, i) => { %>
-        <a class="category" href="<%=tag.path%>"><%=tag.name%></a><%= i+1 < page.tags.length ? ',' : ''%>
+        <a class="category" href="<%=url_for(tag.path)%>"><%=tag.name%></a><%= i+1 < page.tags.length ? ',' : ''%>
     <% }) %>
     </span>
 <% } %>

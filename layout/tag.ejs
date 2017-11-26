@@ -8,7 +8,7 @@
             <%
                 const postModels = page.posts.map(p => {
                     return Object.assign(p, {
-                        url: url_for(p.link),
+                        url: url_for(p.canonical_path),
                         target: p.link ? '_blank': '',
                         year: p.date.year(),
                         month: p.date.month(),
