@@ -1,0 +1,19 @@
+<%
+const featured = site.posts.filter(function (post) {
+    var tags = post.tags.data;
+    return tags.find(function(tag) {
+        return tag.name === 'featured';
+    });
+});
+%>
+
+<section class="<%=sectionClass%>">
+    <h1>Featured posts</h1>
+    <ul>
+        <% featured.forEach(function(post) { %>
+        <li class="post">
+            <a href="<%=config.root + post.path%>"><%=post.title%></a>
+        </li>
+        <% }); %>
+    </ul>
+</section>

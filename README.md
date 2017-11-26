@@ -14,9 +14,12 @@ category cooking, subcategory french cooking).
 Social stuff
 - supports twitter sharing only, at present
 
-Featured posts
-- turn this on with `featured: true` in config.yaml
-- list is not truncated
+Sidebars
+- you can customise the sidebar
+- entries to the yaml are displayed in order
+- recent: boolean
+- featured: boolean, uses tag 'featured'. List is NOT truncated.
+- github: string, if set, fetches repos. Can set 'false' or exclude to disable.
 
 What works?
 - blockquotes
@@ -27,3 +30,10 @@ What works?
 - pullquotes (left, right [= default])
 - jsfiddle embeds
 - youtube videos
+
+Still to do
+- disqus
+- post pagination
+- archive pages
+- atom.xml
+- non-post pages?

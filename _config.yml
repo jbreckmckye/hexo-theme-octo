@@ -13,8 +13,11 @@ menu:
 social:
   twitter: jbreckmckye
 
-# Featured post sidebar
-featured: true
+# Enable sidebars
+sidebars:
+  recent: true
+  featured: false
+  github: jbreckmckye
 
 # Miscellaneous
 favicon: /favicon.ico

@@ -1,22 +1,62 @@
-
 <div id="tag">
-  <h1><%=page.tag%></h1>
-  <% page.posts.each(function(article) { %>
-    <div class="tag-item">
-      <% if (article.link) { %>
-        <a href="<%=url_for(article.link)%>" target="_blank">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } else { %>
-        <a href="<%=url_for(article.link)%>">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } %>
-      <time datetime="<%=date_xml(article.date)%>">
-        <%=date(article.date)%>
-      </time>
-    </div>
-  <% }); %>
+    <article role="article">
+        <header>
+            <h1 class="entry-title">Tagged: <%=page.tag%></h1>
+        </header>
+
+        <div id="blog-archives" class="category">
+            <%
+                const postModels = page.posts.map(p => {
+                    return Object.assign(p, {
+                        url: url_for(p.link),
+                        target: p.link ? '_blank': '',
+                        year: p.date.year(),
+                        month: p.date.month(),
+                        monthDay: p.date.date()
+                    });
+                });
+
+                const postViews = postModels.reduce((acc, model)=> {
+                    const entry = Object.assign(model, {
+                        // only show year if this is first entry in list with that yearstamp
+                        displayYear : !acc.find(_ => _.year === model.year),
+                        title: model.title || 'Untitled',
+                        monthText: model.date.format('MMM'),
+                        datetime: date_xml(model.date)
+                    });
+                    acc.push(entry);
+                    return acc;
+                }, []);
+            %>
+
+            <% postViews.forEach(function(p) { %>
+                <% if (p.displayYear) { %>
+                    <h2><%=p.year%></h2>
+                <% } %>
+
+                <article>
+                    <h1>
+                        <a href="<%=p.url%>" target="<%=p.target%>"><%=p.title%></a>
+                    </h1>
+                    <time datetime="<%=p.datetime%>">
+                        <span class="month"><%=p.monthText%></span>
+                        <span class="day"><%=p.monthDay%></span>
+                        <span class="year"><%=p.year%></span>
+                    </time>
+                    <footer>
+                        <% if (p.tags && p.tags.length){ %>
+                            <span class="categories">
+                                <% p.tags.forEach((tag, i) => { %>
+                                    <a class="category" href="<%=tag.path%>"><%=tag.name%></a><%= i+1 < p.tags.length ? ',' : ''%>
+                                <% }) %>
+                            </span>
+                        <% } %>
+                    </footer>
+                </article>
+            <% }); %>
+
+        </div>
+    </article>
 </div>
 
 <%-partial('partials/pagination')%>
