@@ -109,4 +109,3 @@ This theme will use your `source/images/favicon.png` image as a favicon.
 ## Still to do
 - analytics
 - disqus
-- post pagination
