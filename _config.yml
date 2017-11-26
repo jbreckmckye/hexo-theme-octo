@@ -9,14 +9,14 @@ menu:
 
 # Post social sharing features
 social:
-  twitter: jbreckmckye # set to your twitter handle
+  twitter: your_twitter # set to your twitter handle
 
 # Page sidebars
 # Components will appear in the order they are specified
 sidebars:
   recent: true # boolean to display 10 most recent posts
   featured: false # boolean to list all posts with tag 'featured'
-  github: jbreckmckye # string to point to a Github profile | false to disable
+  github: your_github # string to point to a Github profile | false to disable
 
 # Link to atom.xml in nav bar?
 # You can use https://github.com/hexojs/hexo-generator-feed to generate these
