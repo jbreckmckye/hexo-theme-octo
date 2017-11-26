@@ -4,17 +4,69 @@
 
 A Hexo-theme based on the 'classic' theme for Octopress 2.
 
+Read the Hexo theme [installation instructions](https://github.com/hexojs/hexo/wiki/Themes#install).
+
 ## Notes for Octopress users
 
-### This theme doesn't make Hexo understand Octopress markup
+### This theme won't make Hexo understand Octopress markup
 
-Because Octopress is based on Jekyll, it uses the [liquid template language](https://jekyllrb.com/docs/templates/) for posts. Hexo uses a completely different one. This theme only styles a Hexo blog to look like Octopress - it won't migrate your posts for you. To do that, you'll need to use something like [hexo-migrator-octopress](https://www.npmjs.com/package/hexo-migrator-octopress)
+Hexo and Octopress use completely different markup languages for posts and pages. This theme won't solve this problem for you - it just makes your Hexo blog look like Octopress. To migrate your posts, try using [hexo-migrator-octopress](https://www.npmjs.com/package/hexo-migrator-octopress).
+
+### Writing in Hexo
+
+You can use all the same great Octopress tags in your new Hexo blog:
+
+```markdown
+# Heading
+
+## Subheading
+
+### Subsubheading
+Welcome to [Hexo](https://hexo.io/)!
+
+<!-- more -->
+## Pullquotes
+
+My super pullquote. Pullquotes are right-aligned by default:
+
+{% pullquote left %}
+Left-hand pullquote
+{% endpullquote %}
+
+This right pullquote turns all the heads.
+
+{% pullquote right %}
+Right-hand pullquote
+{% endpullquote %}
+
+## Images
+
+{% img class_names /path/to/image the_width the_height  [the_title [alt text]] %}
+
+## JSFiddle embeds
+
+{% jsfiddle my_fiddle_id html,css,result dark %}
+
+The syntax is: jsfiddle ID, tab list, and theme ('dark' or 'light').
+
+## Iframes
+
+{% iframe http://my.smashing.url %}
+
+## Github Gists
+
+{% gist gist_id filename %}
+
+## YouTube embeds
+
+{% youtube video_id %}
+```
 
 ### Tags and categories
 
-Hexo uses tags where Octopress uses categories. Hexo does have 'categories', but they are hierarchical: a page with categories `[cooking, french]` will be understood as belonging to `category: cooking / subcategory: french cooking`).
+Hexo uses tags where Octopress uses categories. Hexo does have 'categories', but they are hierarchical: a page with categories `[cooking, french]` will be understood as belonging to `category: cooking / subcategory: french cooking`.
 
-## Customising the theme:
+## Theme options:
 
 Change the way your blog works by editing your `/themes/octo/_config.yml` file:
 
@@ -50,17 +102,6 @@ stylesheets:
 scripts:
 
 ```
-
-## What works?
-- blockquotes
-- code blocks
-- images (left / right / center)
-- gists
-- headings
-- pullquotes (left, right [= default])
-- jsfiddle embeds
-- youtube videos
-
 
 ## Favicon
 - this theme will use your source/images/favicon.png image as the tab / shortcut icon
