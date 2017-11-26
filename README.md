@@ -89,7 +89,7 @@ social:
 sidebars:
   recent: true # boolean to display 10 most recent posts
   featured: false # boolean to list all posts with tag 'featured'
-  github: jbreckmckye # list Github repositories | false to disable
+  github: yourgithubid # list Github repositories | false to disable
 
 # Link to atom.xml in nav bar?
 # Use https://github.com/hexojs/hexo-generator-feed to generate these
