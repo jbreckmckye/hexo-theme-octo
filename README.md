@@ -10,7 +10,7 @@ To install, clone this repository into a Hexo `themes/octo` folder and change `t
 
 ### This theme won't make Hexo understand Octopress markup
 
-Hexo and Octopress use completely different markup languages for posts and pages. This theme won't solve this problem for you - it just makes your Hexo blog look like Octopress. To migrate your posts, try using [hexo-migrator-octopress](https://www.npmjs.com/package/hexo-migrator-octopress).
+Hexo and Octopress use completely different markup languages for posts and pages. This theme won't solve that problem for you - it just makes your Hexo blog look like Octopress. To migrate your posts, try using [hexo-migrator-octopress](https://www.npmjs.com/package/hexo-migrator-octopress).
 
 ### Writing in Hexo
 
