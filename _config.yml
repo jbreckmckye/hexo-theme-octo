@@ -4,7 +4,6 @@ language: en
 # Main menu navigation items
 menu:
   Blog: /
-  About: /about
   Archives: /archives
 
 # Post social sharing features
