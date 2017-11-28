@@ -27,6 +27,10 @@ var thisYear = new Date().getFullYear();
 
     <link rel="canonical" href="<%=config.url + '/' + page.canonical_path.replace('index.html', '')%>">
 
+    <% if (theme.atom) {%>
+        <link rel="alternate" href="<%=url_for('/atom.xml')%>" type="application/atom+xml">
+    <% } %>
+
     <% if (theme.googleAnalytics) { %>
         <script type="text/javascript">
             var _gaq = window._gaq || [];
