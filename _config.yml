@@ -18,6 +18,14 @@ sidebars:
   featured: false # boolean to list all posts with tag 'featured'
   github: your_github # string to point to a Github profile | false to disable
 
+# Disqus comments
+disqus:
+  enabled: false
+  shortname: your_disqus_forum_id
+
+# Analytics
+googleAnalytics: false # false | string (UA-xxxx ID)
+
 # Link to atom.xml in nav bar?
 # You can use https://github.com/hexojs/hexo-generator-feed to generate these
 atom: true
