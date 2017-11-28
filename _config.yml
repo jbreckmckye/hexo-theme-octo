@@ -5,6 +5,7 @@ language: en
 menu:
   Blog: /
   Archives: /archives
+  # Title: /pageName - create using `hexo new page 'pageName'`
 
 # Post social sharing features
 social:
