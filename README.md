@@ -112,3 +112,5 @@ scripts:
 ## Favicon
 This theme will use your `source/images/favicon.png` image as a favicon.
 
+## Limitations
+This theme doesn't currently support image galleries. Let me know if you need it.
