@@ -53,6 +53,11 @@ The syntax is: jsfiddle ID, tab list, and theme ('dark' or 'light').
 
 {% iframe http://my.smashing.url %}
 
+## Codeblocks
+{% codeblock %}
+beep.beep(thisIsMyCode).beep();
+{% endcodeblock %}
+
 ## Github Gists
 
 {% gist gist_id filename %}
