@@ -55,7 +55,7 @@ The syntax is: jsfiddle ID, tab list, and theme ('dark' or 'light').
 
 ## Codeblocks
 {% codeblock %}
-beep.beep(thisIsMyCode).beep();
+    beep.beep(thisIsMyCode).beep();
 {% endcodeblock %}
 
 ## Github Gists
