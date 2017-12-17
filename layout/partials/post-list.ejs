@@ -5,10 +5,14 @@
 
     <div id="blog-archives" class="category">
         <%
-        const postViews = listPosts.reduce((acc, model)=> {
+        const sorted = listPosts.data.sort((a, b)=> {
+            return b.date.unix() - a.date.unix();
+        });
+
+        const postViews = sorted.reduce((acc, model)=> {
             const entry = Object.assign(model, {
                 // only show year if this is first entry in list with that yearstamp
-                displayYear : !acc.find(_ => _.year === model.year),
+                displayYear : !acc.find(_ => _.date.year() === model.date.year()),
                 title: model.title || 'Untitled',
                 monthText: model.date.format('MMM'),
                 dayText: model.date.format('DD'),
