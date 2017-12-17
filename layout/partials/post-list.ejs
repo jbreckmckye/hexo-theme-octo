@@ -19,7 +19,7 @@
                 yearText: model.date.format('YYYY'),
                 datetime: date_xml(model.date),
                 target: model.link ? '_blank': '',
-                url: url_for(model.canonical_path)
+                url: url_for(model.canonical_path).split('index.html')[0]
             });
             acc.push(entry);
             return acc;
