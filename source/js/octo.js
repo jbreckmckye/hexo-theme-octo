@@ -139,6 +139,17 @@ $('document').ready(function() {
     }
 }(document));
 
+// Periodically wipe comment ads
+window.setInterval(()=> {
+    const iframes = Array.from(document.querySelectorAll('iframe'));
+    iframes.forEach(iframe => {
+        if (iframe.src.match(/(ads-iframe)|(disqusads)/g)) {
+            iframe.classList.add('visually-hidden');
+        }
+    });
+
+}, 500);
+
 /*!	SWFObject v2.2 modified by Brandon Mathis to contain only what is necessary to dynamically embed flash objects
  * Uncompressed source in javascripts/libs/swfobject-dynamic.js
  * <http://code.google.com/p/swfobject/>
@@ -152,13 +163,3 @@ var swfobject=function(){function s(a,b,d){var q,k=n(d);if(g.wk&&g.wk<312)return
         a&&b&&d&&i&&k){d+="";i+="";var p={};if(f&&typeof f===o)for(var m in f)p[m]=f[m];p.data=a;p.width=d;p.height=i;a={};if(c&&typeof c===o)for(var n in c)a[n]=c[n];if(e&&typeof e===o)for(var r in e)typeof a.flashvars!=l?a.flashvars+="&"+r+"="+e[r]:a.flashvars=r+"="+e[r];if(t(k))b=s(p,a,b),j.success=!0,j.ref=b}h&&h(j)},ua:g,getFlashPlayerVersion:function(){return{major:g.pv[0],minor:g.pv[1],release:g.pv[2]}},hasFlashPlayerVersion:t,createSWF:function(a,b,d){if(g.w3)return s(a,b,d)},getQueryParamValue:function(a){var b=
         i.location.search||i.location.hash;if(b){/\?/.test(b)&&(b=b.split("?")[1]);if(a==null)return u(b);for(var b=b.split("&"),d=0;d<b.length;d++)if(b[d].substring(0,b[d].indexOf("="))==a)return u(b[d].substring(b[d].indexOf("=")+1))}return""}}}();
 
-// Periodically wipe comment ads
-window.setInterval(()=> {
-    const iframes = Array.from(document.querySelectorAll('iframe'));
-    iframes.forEach(iframe => {
-        if (iframe.src.match(/(ads-iframe)|(disqusads)/g)) {
-            iframe.classList.add('visually-hidden');
-        }
-    });
-
-}, 500);
