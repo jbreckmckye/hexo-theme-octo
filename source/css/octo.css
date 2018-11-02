@@ -2143,6 +2143,10 @@ body > footer p:last-child {
     margin-bottom: 0
 }
 
+.pagination span.space {
+    display: none;
+}
+
 /*comment ads suck*/
  iframe[sandbox], .advertisement-comment {
     display: none;
