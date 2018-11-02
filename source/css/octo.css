@@ -2146,8 +2146,3 @@ body > footer p:last-child {
 .pagination span.space {
     display: none;
 }
-
-/*comment ads suck*/
- iframe[sandbox], .advertisement-comment {
-    display: none;
- }
