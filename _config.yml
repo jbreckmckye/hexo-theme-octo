@@ -21,7 +21,7 @@ sidebars:
 # Disqus comments
 disqus:
   enabled: false
-  shortname: your_disqus_forum_id
+  shortname: your_website_shortname
 
 # Analytics
 googleAnalytics: false # false | string (UA-xxxx ID)

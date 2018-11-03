@@ -6,6 +6,8 @@ A Hexo theme based on the 'classic' theme for Octopress 2.
 
 To install, clone this repository into a Hexo `themes/octo` folder and change `theme` in `_config.yml` to "octo".
 
+When updating, remember not to overwrite your theme config.yml.
+
 ## Notes for Octopress users
 
 ### Migrating from Octopress
@@ -82,28 +84,30 @@ language: en
 # Main menu navigation items
 menu:
   Blog: /
-  About: /about
   Archives: /archives
+  # Title: /pageName - create using `hexo new page 'pageName'`
 
-# Post social sharing features (only twitter at present)
+# Post social sharing features
 social:
-  twitter: yournamehere # set to your twitter handle | false to disable
+  twitter: your_twitter # set to your twitter handle
 
 # Page sidebars
 # Components will appear in the order they are specified
 sidebars:
   recent: true # boolean to display 10 most recent posts
   featured: false # boolean to list all posts with tag 'featured'
-  github: yourgithubid # list Github repositories | false to disable
+  github: your_github # string to point to a Github profile | false to disable
 
 # Disqus comments
-disqus: yourpageid # disqus page identifier | false to disable
+disqus:
+  enabled: false
+  shortname: your_website_shortname
 
 # Analytics
-googleAnalytics: UA-your-id # Google Analytics ID | false to disable
+googleAnalytics: false # false | string (UA-xxxx ID)
 
 # Link to atom.xml in nav bar?
-# Use https://github.com/hexojs/hexo-generator-feed to generate these
+# You can use https://github.com/hexojs/hexo-generator-feed to generate these
 atom: true
 
 # Stylesheets loaded in the <head>
@@ -111,7 +115,6 @@ stylesheets:
 
 # Scripts loaded at the end of the body
 scripts:
-
 ```
 
 ## Favicon
