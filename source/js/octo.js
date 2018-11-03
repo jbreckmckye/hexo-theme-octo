@@ -144,7 +144,7 @@ window.setInterval(()=> {
     const iframes = Array.from(document.querySelectorAll('iframe'));
     iframes.forEach(iframe => {
         if (iframe.src.match(/(ads-iframe)|(disqusads)/g)) {
-            iframe.classList.add('visually-hidden');
+            iframe.classList.add('ad-unit');
         }
     });
 
