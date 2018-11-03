@@ -5,26 +5,25 @@ language: en
 menu:
   Blog: /
   Archives: /archives
-  # Title: /pageName - create using `hexo new page 'pageName'`
 
 # Post social sharing features
 social:
-  twitter: your_twitter # set to your twitter handle
+  twitter: jbreckmckye
 
 # Page sidebars
 # Components will appear in the order they are specified
 sidebars:
   recent: true # boolean to display 10 most recent posts
-  featured: false # boolean to list all posts with tag 'featured'
-  github: your_github # string to point to a Github profile | false to disable
+  featured: true # boolean to list all posts with tag 'featured'
+  github: jbreckmckye # string to point to a Github profile | false to disable
 
 # Disqus comments
 disqus:
-  enabled: false
-  shortname: your_website_shortname
+  enabled: true
+  shortname: breck-mckye
 
 # Analytics
-googleAnalytics: false # false | string (UA-xxxx ID)
+googleAnalytics: 27278071 # false | string (UA-xxxx ID)
 
 # Link to atom.xml in nav bar?
 # You can use https://github.com/hexojs/hexo-generator-feed to generate these
