@@ -6,7 +6,9 @@ A Hexo theme based on the 'classic' theme for Octopress 2.
 
 To install, clone this repository into a Hexo `themes/octo` folder and change `theme` in `_config.yml` to "octo".
 
-When updating, remember not to overwrite your theme config.yml.
+Then copy `themes/octo/_config-example.yml` into `themes/octo/_config.yml`.
+
+When updating, check `_config-example` for items you may want to port into your existing `_config` file.
 
 ## Notes for Octopress users
 
@@ -75,7 +77,9 @@ Hexo uses tags where Octopress uses categories. Hexo does have 'categories', but
 
 ## Theme options:
 
-Change the way your blog works by editing your `/themes/octo/_config.yml` file:
+Change the way your blog works by editing your `/themes/octo/_config.yml` file.
+
+If you don't have a `_config.yml` file, that's because you need to first copy it from `_config-example.yml`.
 
 ```yaml
 # Page language (html attribute)
