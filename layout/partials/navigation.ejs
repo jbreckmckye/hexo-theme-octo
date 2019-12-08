@@ -7,7 +7,7 @@
 
     <form action="http://google.com/search" method="get">
         <fieldset role="search">
-            <input type="hidden" name="q" value="site:<%- url_for() %>">
+            <input type="hidden" name="q" value="site:<%- full_url_for() %>">
             <input class="search" type="text" name="q" results="0" placeholder="Search">
         </fieldset>
     </form>
