@@ -1,5 +1,5 @@
 <div class="sharing">
-    <%if (theme.social.twitter) { %>
+    <%if (theme && theme.social && theme.social.twitter) { %>
         <a class="twitter-share-button"
            href="https://twitter.com/intent/tweet?text=<%=encodeURIComponent(page.title)%>">
             Tweet
