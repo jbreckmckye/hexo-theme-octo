@@ -1,5 +1,7 @@
 # hexo-theme-octo
 
+![Screenshot](/screenshot.png)
+
 ## What is this?
 
 A Hexo theme based on the 'classic' theme for Octopress 2.
