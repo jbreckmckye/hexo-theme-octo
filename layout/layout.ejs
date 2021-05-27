@@ -10,9 +10,7 @@ var thisYear = new Date().getFullYear();
 %>
 
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7" lang="<%=config.language%>"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8" lang="<%=config.language%>"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="<%=config.language%>"><!--<![endif]-->
+<html lang="<%=config.language%>">
 <head>
     <meta charset="UTF-8">
     <title><%= pageTitle %></title>
@@ -43,8 +41,6 @@ var thisYear = new Date().getFullYear();
         </script>
     <% } %>
 
-    <%- js('js/modernizr-2.0') %>
-
     <%- js('js/jquery-1.9.1') %>
 
     <%- partial('partials/social-scripts') %>
@@ -53,11 +49,8 @@ var thisYear = new Date().getFullYear();
 
     <%- css('css/octo') %>
 
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
-          type="text/css">
-
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
-          type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
 
     <% if (theme.stylesheets && theme.stylesheets.length) { %>
         <!-- stylesheets list from config.yml -->
@@ -82,7 +75,7 @@ var thisYear = new Date().getFullYear();
 <footer role="contentinfo">
     <p>
         Copyright © <%= thisYear %> - <%= config.author %> -
-        <span class="credit">Generated using <a href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme</a> for <a href="http://hexo.io">Hexo</a></span>
+        <span class="credit">Generated using <a href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme (Nova)</a> for <a href="http://hexo.io">Hexo</a></span>
     </p>
 </footer>
 

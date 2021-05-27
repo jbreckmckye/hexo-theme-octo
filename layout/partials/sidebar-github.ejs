@@ -6,45 +6,48 @@
 
     <a href="https://github.com/<%=theme.sidebars.github%>">@<%=theme.sidebars.github%></a> on GitHub
 
-    <script>
-        $(document).ready(function(){
-            const options = {
-                user: '<%=theme.sidebars.github%>',
-                count: 0,
-                skip_forks: true,
-                target: '#gh_repos'
-            }
+    <script defer>
+        const htmlEscaper = document.createElement('textarea');
+        const target = document.getElementById('gh_repos');
 
-            function escapeHtml(str) {
-                return $('<div/>').text(str).html();
-            }
+        function request () {
+            const ghUser = '<%=theme.sidebars.github%>';
+            const url = `https://api.github.com/users/${ghUser}/repos?sort=pushed`;
 
-            function render(target, repos){
-                let i, fragment = '', t = $(target)[0];
-
-                for(i = 0; i < repos.length; i++) {
-                    fragment += '<li><a href="'+repos[i].html_url+'">'+repos[i].name+'</a><p>'+escapeHtml(repos[i].description||'')+'</p></li>';
-                }
-                t.innerHTML = fragment;
-            }
-
-            $.ajax({
-                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
-                dataType: 'jsonp',
-                error: function (err) {
-                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
-                },
-                success: function(data) {
-                    var repos = [];
-                    if (!data || !data.data) { return; }
-                    for (var i = 0; i < data.data.length; i++) {
-                        if (options.skip_forks && data.data[i].fork) { continue; }
-                        repos.push(data.data[i]);
-                    }
-                    if (options.count) { repos.splice(options.count); }
-                    render(options.target, repos);
+            return fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
                 }
             });
-        });
+        }
+
+        function renderError () {
+            target.classList.add('error');
+            target.innerText = 'Error loading feed';
+        }
+
+        function renderRepo (repo) {
+            return `<li>
+                <a href="${repo.html_url}">${repo.name}</a>
+                <p>${escapeHTML(repo.description || '')}</p>    
+            </li>`;
+        }
+
+        function escapeHTML (text) {
+            htmlEscaper.innerHTML = text;
+            return htmlEscaper.value;
+        }
+
+        request()
+            .then(response => response.json())
+            .then(results => {
+                if (!results) return;
+                results.forEach(result => {
+                    const repoHTML = renderRepo(result);
+                    target.insertAdjacentHTML('beforeend', repoHTML);
+                });
+            })
+            .catch(renderError);
     </script>
 </section>
