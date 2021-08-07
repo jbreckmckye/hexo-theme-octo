@@ -4,7 +4,7 @@
     border: 0;
     font: inherit;
     font-size: 100%;
-    vertical-align: baseline
+    vertical-align: baseline;
 }
 
 html {
@@ -103,19 +103,19 @@ body > div > div {
 /* Heading and body fonts */
 
 .heading, body > header h1, h1, h2, h3, h4, h5, h6 {
-    font-family: "Lato", "Helvetica Neue", Arial, sans-serif
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
 }
 
 body > header h2, article header p.meta, article > footer, #content .blog-index footer, html .gist .gist-file .gist-meta, #blog-archives a.category, #blog-archives time, aside.sidebar section, body > footer {
-    font-family: "Lato", "Helvetica Neue", Arial, sans-serif
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
 }
 
 body, #content .blog-index a[rel=full-article] {
-    font-family: "Lato", "Helvetica Neue", Arial, sans-serif
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
 }
 
 .mono, pre, code, tt, p code, li code {
-    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace
+    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 }
 
 body > header h1 {

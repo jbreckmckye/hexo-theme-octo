@@ -1,7 +1,7 @@
 <section class="<%=sectionClass%>">
     <h1>GitHub Repos</h1>
     <ul id="gh_repos">
-        <li class="loading">Status updating&#8230;</li>
+        <li id="gh_loader">Status updating&#8230;</li>
     </ul>
 
     <a href="https://github.com/<%=theme.sidebars.github%>">@<%=theme.sidebars.github%></a> on GitHub
@@ -12,7 +12,7 @@
 
         function request () {
             const ghUser = '<%=theme.sidebars.github%>';
-            const url = `https://api.github.com/users/${ghUser}/repos?sort=pushed`;
+            const url = `https://api.github.com/users/${ghUser}/repos?sort=pushed&type=sources`;
 
             return fetch(url, {
                 method: 'GET',
@@ -43,10 +43,17 @@
             .then(response => response.json())
             .then(results => {
                 if (!results) return;
-                results.forEach(result => {
-                    const repoHTML = renderRepo(result);
+
+                const repos = results
+                  .filter(result => !result.fork)
+                  .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                  .reduce((acc, item) => acc.length >= 15 ? acc : [...acc, item], []);
+
+                repos.forEach(repo => {
+                    const repoHTML = renderRepo(repo);
                     target.insertAdjacentHTML('beforeend', repoHTML);
                 });
+                document.getElementById('gh_loader').remove();
             })
             .catch(renderError);
     </script>
